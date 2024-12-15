@@ -39,7 +39,7 @@ class KNNScratch:
         predictions = []
         for idx, x in enumerate(X_test):
             try:
-                print(f"[DEBUG] Predicting sample {idx}")
+                print(f"[DEBUG] Predik sample {idx}")
                 result = self.predict_one(x)
                 predictions.append(result)
             except Exception as e:
@@ -54,7 +54,7 @@ class KNNScratch:
                 distance = self.calculate_distance(x, x_train)
                 distances.append(distance)
             except Exception as e:
-                print(f"[DEBUG] Error in distance calculation at index {idx}: x={x}, x_train={x_train}, Error={e}")
+                print(f"[DEBUG] Error={e}")
                 raise
                 
         # print(f"[DEBUG] Distances for one test sample calculated.")
