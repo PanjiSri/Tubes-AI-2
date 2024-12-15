@@ -132,32 +132,32 @@ class ID3Scratch:
         return data
 
 
-# Contoh data
-data = {
-    'Outlook': ['Sunny', 'Sunny', 'Overcast', 'Rain', 'Rain', 'Rain', 'Overcast', 'Sunny', 'Sunny', 'Rain', 'Sunny', 'Overcast', 'Overcast', 'Rain'],
-    'Temperature': ['Hot', 'Hot', 'Hot', 'Mild', 'Cool', 'Cool', 'Cool', 'Mild', 'Cool', 'Mild', 'Mild', 'Mild', 'Hot', 'Mild'],
-    'Humidity': ['High', 'High', 'High', 'High', 'Normal', 'Normal', 'Normal', 'High', 'Normal', 'Normal', 'Normal', 'High', 'Normal', 'High'],
-    'Angka': [13, 15, 19, 10, 19, 15, 19, 14, 14, 14, 14, 15, 13, 15],
-    'PlayTennis': ['No', 'No', 'Yes', 'Yes', 'Yes', 'No', 'Yes', 'No', 'Yes', 'Yes', 'Yes', 'Yes', 'Yes', 'No']
-}
+# # Contoh data
+# data = {
+#     'Outlook': ['Sunny', 'Sunny', 'Overcast', 'Rain', 'Rain', 'Rain', 'Overcast', 'Sunny', 'Sunny', 'Rain', 'Sunny', 'Overcast', 'Overcast', 'Rain'],
+#     'Temperature': ['Hot', 'Hot', 'Hot', 'Mild', 'Cool', 'Cool', 'Cool', 'Mild', 'Cool', 'Mild', 'Mild', 'Mild', 'Hot', 'Mild'],
+#     'Humidity': ['High', 'High', 'High', 'High', 'Normal', 'Normal', 'Normal', 'High', 'Normal', 'Normal', 'Normal', 'High', 'Normal', 'High'],
+#     'Angka': [13, 15, 19, 10, 19, 15, 19, 14, 14, 14, 14, 15, 13, 15],
+#     'PlayTennis': ['No', 'No', 'Yes', 'Yes', 'Yes', 'No', 'Yes', 'No', 'Yes', 'Yes', 'Yes', 'Yes', 'Yes', 'No']
+# }
 
-df = pd.DataFrame(data)
-X = df[['Outlook', 'Temperature', 'Humidity', 'Angka']]
-y = df['PlayTennis']
+# df = pd.DataFrame(data)
+# X = df[['Outlook', 'Temperature', 'Humidity', 'Angka']]
+# y = df['PlayTennis']
 
-# Training model
-model = ID3Scratch(['Angka'])
-model.fit(X, y)
+# # Training model
+# model = ID3Scratch(['Angka'])
+# model.fit(X, y)
 
-# Display the decision tree
-model.display_tree()
+# # Display the decision tree
+# model.display_tree()
 
-# Predicting
-test_data = pd.DataFrame({
-    'Outlook': ['Sunny', 'Rain', 'Rain'],
-    'Temperature': ['Cool', 'Mild', 'Hot'],
-    'Humidity': ['High', 'Normal', 'Normal'],
-    'Angka': [7, 20, 1]
-})
-predictions = model.predict(test_data)
-print(predictions)
+# # Predicting
+# test_data = pd.DataFrame({
+#     'Outlook': ['Sunny', 'Rain', 'Rain'],
+#     'Temperature': ['Cool', 'Mild', 'Hot'],
+#     'Humidity': ['High', 'Normal', 'Normal'],
+#     'Angka': [7, 20, 1]
+# })
+# predictions = model.predict(test_data)
+# print(predictions)
