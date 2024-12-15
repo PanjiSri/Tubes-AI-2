@@ -1,4 +1,6 @@
 import numpy as np
+import pickle
+import pandas as pd
 
 class KNNScratch:
     def __init__(self, k_neighbours=3, distance_type='euclidean', p=3):
@@ -37,7 +39,7 @@ class KNNScratch:
         predictions = []
         for idx, x in enumerate(X_test):
             try:
-                print(f"[DEBUG] Predicting sample {idx}")
+                print(f"[DEBUG] Predik sample {idx}")
                 result = self.predict_one(x)
                 predictions.append(result)
             except Exception as e:
@@ -52,7 +54,7 @@ class KNNScratch:
                 distance = self.calculate_distance(x, x_train)
                 distances.append(distance)
             except Exception as e:
-                print(f"[DEBUG] Error in distance calculation at index {idx}: x={x}, x_train={x_train}, Error={e}")
+                print(f"[DEBUG] Error={e}")
                 raise
                 
         # print(f"[DEBUG] Distances for one test sample calculated.")
@@ -70,3 +72,12 @@ class KNNScratch:
         # print(f"[DEBUG] Most common label: {most_common_label}")
         
         return most_common_label
+    
+    def save_model(self, file_path):
+        with open(file_path, 'wb') as file:
+            pickle.dump(self, file)
+
+    @staticmethod
+    def load_model(file_path):
+        with open(file_path, 'rb') as file:
+            return pickle.load(file)
