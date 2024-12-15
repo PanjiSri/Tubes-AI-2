@@ -1,3 +1,5 @@
+import numpy as np
+
 class KNNScratch:
     def __init__(self, k_neighbours=3, distance_type='euclidean', p=3):
         self.k_neighbours = k_neighbours
