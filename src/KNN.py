@@ -1,4 +1,6 @@
 import numpy as np
+import pickle
+import pandas as pd
 
 class KNNScratch:
     def __init__(self, k_neighbours=3, distance_type='euclidean', p=3):
@@ -70,3 +72,12 @@ class KNNScratch:
         # print(f"[DEBUG] Most common label: {most_common_label}")
         
         return most_common_label
+    
+    def save_model(self, file_path):
+        with open(file_path, 'wb') as file:
+            pickle.dump(self, file)
+
+    @staticmethod
+    def load_model(file_path):
+        with open(file_path, 'rb') as file:
+            return pickle.load(file)
